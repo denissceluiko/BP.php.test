@@ -4,6 +4,8 @@
     "description": "Test for Nuxt.js",
 
     "require": {
+        "php": "^8.0",
+        "ext-gd": "^8.0",
         "intervention/image": "^2.7"
     },
 
