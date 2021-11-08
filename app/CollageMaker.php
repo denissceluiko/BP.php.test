@@ -44,7 +44,6 @@ class CollageMaker
         $index = 0;
         foreach ($this->assets as $file) {
             $this->draw($file, $index++);
-            error_log($file->getFilename().'@'.$index);
         }
     }
 
@@ -55,6 +54,7 @@ class CollageMaker
         );
 
         foreach ($this->filesystemIterator as $file) {
+            if (!str_contains(mime_content_type($file->getPathname()), 'image')) continue;
             $this->assets[$file->getFilename()] = $file;
         }
 
